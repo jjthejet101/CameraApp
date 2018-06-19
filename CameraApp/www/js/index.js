@@ -4,20 +4,18 @@ let app = {
   },
   takephoto: function () {
     let opts = {
-      quality: 80,
-      destinationType: Camera.DestinationType.FILE_URI,
+      quality: 100,
+      destinationType: Camera.DestinationType.DATA_URL,
       sourceType: Camera.PictureSourceType.CAMERA,
       mediaType: Camera.MediaType.PICTURE,
       encodingType: Camera.EncodingType.JPEG,
       cameraDirection: Camera.Direction.FRONT,
-      targetWidth: 300,
-      targetHeight: 400
     }
     navigator.camera.getPicture(app.ftw, app.wtf, opts)
   },
-  ftw: function (imgURI) {
-    document.getElementById('msg').textContent = imgURI
-    document.getElementById('photo').src = imgURI
+  ftw: function (imageData) {
+    document.getElementById('msg').textContent = imageData
+    document.getElementById('photo').src = 'data:image/jpeg;base64,' + imageData
   },
   wtf: function (msg) {
     document.getElementById('msg').textContent = msg
