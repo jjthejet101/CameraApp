@@ -1,4 +1,4 @@
-CameraApp
+CameraApp **DESIGNED TO WORK IN BROWSER**
 
 Lesson 5 Hands-On                                                           5 points
 Directions
